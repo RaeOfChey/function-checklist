@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>✅ FuncTastic</h1>
+        <section id = "add-new">
+            <button id = "add">Add</button>
+            <p>Add new function</p>
+        </section>
+    </header>
+    
+    <main>
+        
+        <h2>Tracked Functions</h2>
+        <h2 id = "total">total:<!--total var here --></h2>
+
+    </main>
+    
+    <section id = "modal">
+        <div id = "modal-content">
+            <form>
+                
+                <section id="Input">
+                    <div id = "modal-name">
+                        <label for = "modal-title">Function name</label>
+                        <input type="text" id = "my-name" name = "modal-name" required>
+                    </div>
+                    <br>
+                    <div id = "modal-desc">
+                        <label for = "modal-desc">Function Description</label>
+                        <input type="text" id = "my-desc" name = "modal-desc" required>
+                    </div>
+                    <br>
+                </section>
+                    
+                    <h2>Attributes</h2>
+
+
+                <section id = "modal-type">
+                    <label for = "modal-type">Function Type</label>
+                    <select id = "my-type" name = "modal-type"></select>
+                        <option value = "named">Named</option>
+                        <option value = "anonymous">Anonymous</option>
+                        <option value = "callback">Callback</option>
+                </section>
+
+                <section id = "modal-checkboxes">
+                    <label>
+                    <input type = "checkbox" id = "beingcalled" name = "beingcalled" value = "iscalled">
+                    </label>
+                </section>
+
+                <section id = "modal-scope">
+                    <label for = "modal-scope">Function Scope</label>
+                    <select id = "my-scope" name = "modal-scope"></select>
+                        <option value = "global">Global</option>
+                        <option value = "local">Local</option>
+                        <option value = "block">Block</option>
+                </section>
+
+                <section id = "save">
+                    <button id = "button-save">Save</button>
+                </section>
+
+                <section id = "cancel">
+                    <button id = "button-cancel">Cancel</button>
+                </section>
+
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>
