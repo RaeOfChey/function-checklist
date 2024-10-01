@@ -21,8 +21,14 @@
     
     <main>
         
+        <section id = "total-tracker">
         <h2>Tracked Functions</h2>
         <h2 id = "total">total:<!--total var here --></h2>
+        </section>
+
+        <section id = "main-list">
+            <ul><!--main list goes here--></ul>
+        </section>
 
     </main>
     
@@ -45,13 +51,13 @@
                     
                     <h2>Attributes</h2>
 
-
                 <section id = "modal-type">
                     <label for = "modal-type">Function Type</label>
-                    <select id = "my-type" name = "modal-type"></select>
+                    <select id = "my-type" name = "modal-type">
                         <option value = "named">Named</option>
                         <option value = "anonymous">Anonymous</option>
                         <option value = "callback">Callback</option>
+                    </select>
                 </section>
 
                 <section id = "modal-checkboxes">
@@ -62,10 +68,11 @@
 
                 <section id = "modal-scope">
                     <label for = "modal-scope">Function Scope</label>
-                    <select id = "my-scope" name = "modal-scope"></select>
+                    <select id = "my-scope" name = "modal-scope">
                         <option value = "global">Global</option>
                         <option value = "local">Local</option>
                         <option value = "block">Block</option>
+                    </select>
                 </section>
 
                 <section id = "save">
