@@ -12,11 +12,16 @@
 <body>
 
     <header>
+
         <h1>✅ FuncTastic</h1>
-        <section id = "add-new">
-            <button id = "add">Add</button>
-            <p>Add new function</p>
-        </section>
+
+        <h2>Add New Function</h2>
+
+        <div class="add-new-container">
+            <button id="add">Add</button>
+            <p class="placeholder-text">Add a new function...</p>
+        </div>
+
     </header>
     
     <main>
@@ -37,16 +42,30 @@
             <form>
                 
                 <section id="Input">
+
                     <div id = "modal-name">
                         <label for = "my-name">Function name</label>
                         <input type="text" id = "my-name" name = "modal-name" required>
                     </div>
+
                     <br>
+
                     <div id = "modal-desc">
                         <label for = "my-desc">Function Description</label>
                         <input type="text" id = "my-desc" name = "modal-desc" required>
                     </div>
+
                     <br>
+
+                    <button class="accordion">
+                        <span class="arrow">▼</span>
+                        <span class="text">See all attributes</span>
+                      </button>
+
+                      <div class="panel">
+                        <p>Here are the hidden attributes that will now be visible.</p>
+                      </div>
+
                 </section>
                     
                     <h2>Attributes</h2>
@@ -86,6 +105,8 @@
             </form>
         </div>
     </section>
+
+    
 
 </body>
 

@@ -1,0 +1,200 @@
+/* Global styles */
+:root {
+    --color-primary: #CFB8FF;
+    --color-secondary: #b399ff;
+    --color-black: #000000;
+    --color-dark-gray: #3b3b3b;
+    --color-gray: #999999;
+    --color-light-gray: #D9D9D9;
+    --color-white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header styles */
+h1 {
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--color-black);
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    color: var(--color-black);
+    font-weight: 500;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+/* Container styles */
+.add-new-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--color-black);
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+}
+
+/* Add button styles */
+#add {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+#add:hover {
+    background-color: var(--color-secondary);
+}
+
+#add:active {
+    border: 2px solid var(--color-black);
+    transform: scale(0.95);
+}
+
+#add:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+.placeholder-text {
+    font-size: 20px;
+    color: var(--color-gray);
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Save button styles */
+#button-save {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+#button-save:hover {
+    background-color: var(--color-dark-gray);
+    color: var(--color-secondary);
+}
+
+#button-save:active {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    transform: scale(0.95);
+}
+
+#button-save:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+/* Cancel button styles */
+#button-cancel {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+#button-cancel:hover {
+    background-color: var(--color-primary);
+}
+
+#button-cancel:active {
+    transform: scale(0.95);
+}
+
+#button-cancel:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    cursor: not-allowed;
+}
+
+/* Accordion button styles */
+.accordion {
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Arrow style */
+  .accordion .arrow {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #CFB8FF;
+    transition: transform 0.3s;
+  }
+  
+  /* Underlined text */
+  .accordion .text {
+    text-decoration: underline;
+    font-size: 16px;
+    color: black;
+  }
+  
+  /* Hidden panel */
+  .panel {
+    padding: 10px 20px;
+    display: none;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+  
+  /* Rotate arrow when active */
+  .accordion.active .arrow {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown styling */
+.dropdown-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    color: var(--color-american_gray);
+    background-color: var(--fixed-light-color);
+    }
+    
+    .dropdown-container select:focus {
+    color: var(--primary-surface-color);
+    }
+    
+    .dropdown-container select option {
+    color: var(--primary-surface-color);
+    }
+ 
+  
