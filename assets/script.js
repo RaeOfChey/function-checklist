@@ -8,6 +8,7 @@ const save = document.getElementById(`button-save`);
 const cancel = document.getElementById(`button-cancel`);
 const addButton = document.getElementById(`add`);
 const modal = document.getElementById(`modal`);
+const mainList = document.querySelector(`#the-list`);
 
 const totalNumber = document.createElement(`h2`);
 
@@ -27,6 +28,61 @@ function updateTracker() {
     }
 
     totalNumber.innerText = funcList.length === 0 ? `0` : funcList.length;
+}
+
+function renderList() {
+
+    stored = localStorage.getItem(`funcList`);
+
+    if (stored === null) {
+        mainList.innerHTML = `Press "Add" to add your first function!`;
+    } else {
+        
+        mainList.innerHTML = ``;
+        
+        funcList = JSON.parse(stored);
+        
+        for (let i = 0; i < funcList.length ; i++) {
+            const info = funcList[i];
+            
+            const card = document.createElement(`li`);
+            const funcItem = document.createElement(`article`);
+            const funcName = document.createElement(`h3`);
+            const description = document.createElement(`h4`);
+            const funcDescription = document.createElement(`blockquote`);
+            const attributes = document.createElement(`h3`);
+            const attList = document.createElement(`ul`);
+            const funcType = document.createElement(`p`);
+            const funcScope = document.createElement(`p`);
+            const attItem = document.createElement(`li`);
+            const tips = document.createElement(`p`);
+            const allTips = document.createElement(`ul`);
+            const tipItem = document.createElement(`li`);
+            const edit = document.createElement(`button`);
+            const erase = document.createElement(`button`);
+            const seeMore = document.createElement(`button`);
+            
+            funcName.textContent = info.title;
+            description.textContent = `Description`;
+            funcDescription.textContent = info.description;
+            attributes.textContent = `Attributes`;
+            funcType.textContent = `Function type: ` + info.type;
+            funcScope.textContent = `Function scope: ` + info.scope;
+            edit.textContent = `Edit`;
+            edit.id = `editButton`;
+            erase.textContent = `Erase`;
+            erase.id = `eraseButton`;
+            seeMore.textContent = `See More`;
+            seeMore.id = `moreButton`;
+            
+            mainList.appendChild(card);
+            card.append(funcItem, erase, edit, seeMore);
+            funcItem.append(funcName, description, attributes,);
+            description.appendChild(funcDescription);
+            attributes.appendChild(attList);
+            attList.append(funcType, funcScope);
+        }
+    }
 }
 
 function addFunction (event) {
@@ -66,9 +122,11 @@ function addFunction (event) {
     funcList.push(newFunction);
     
     localStorage.setItem(`funcList`, JSON.stringify(funcList));
-    updateTracker(funcList);
+    renderList();
+    updateTracker();
     hideModal();
 }
+
 
 function showModal() {
     modal.style.display = `block`;
@@ -79,8 +137,9 @@ function hideModal() {
 }
 
 document.addEventListener(`DOMContentLoaded`, function() {
-    //modal.style.display = `none`;
+    modal.style.display = `none`;
     updateTracker();
+    renderList();
   });
 
 addButton.addEventListener(`click`, showModal);
