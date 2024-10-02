@@ -26,9 +26,14 @@ h2 {
     font-size: 26px;
     color: var(--color-black);
     font-weight: 500;
-    margin: 0;
+    margin: 0 0 10px 100px;
     padding-top: 50px;
     padding-bottom: 15px;
+}
+
+header {
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
 }
 
 /* Container styles */
@@ -40,6 +45,10 @@ h2 {
     margin-top: 10px;
     background-color: var(--color-white);
     border-radius: 5px;
+    flex: 0 0 calc(50% - 50px); /* Take up half the width minus the space for margin */
+    margin: 0 100px; /* 100px margin on left and right */
+    padding: 20px; /* Add padding for better appearance */
+    box-sizing: border-box;
 }
 
 /* Add button styles */
@@ -197,4 +206,23 @@ main {
     color: var(--primary-surface-color);
     }
  
-  
+    /* Styles for mobile view */
+    @media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.5rem; /* Adjust the font size for mobile */
+        margin: 0; /* Remove margin */
+    }
+
+    h2 {
+        margin: 25px 0; /* Add margin only above and below */
+        padding-bottom: 0;
+    }
+
+    .add-new-container {
+        flex: 0 0 100%;
+        margin: 25px 0;
+        padding: 20px;
+    }
+
+    }
