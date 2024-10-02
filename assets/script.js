@@ -26,7 +26,7 @@ function addFunction (event) {
     let funcList = localStorage.getItem(`funcList`)
 
     if (funcList === null) {
-
+        
         funcList = [];
     } else {
 
