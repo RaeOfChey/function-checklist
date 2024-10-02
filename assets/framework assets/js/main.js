@@ -1,3 +1,4 @@
+
 $(function() {
     // Add active class when the dropdown is interacted with
     $('#my-type').on('focus', function () {

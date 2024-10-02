@@ -14,6 +14,19 @@ body {
     margin: 0 100px;
 }
 
+.main-container {
+    display: flex; /* Use flexbox to align children side by side */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start;
+}
+
+.container, /* for the header section */
+main { /* for the main section */
+    flex: 0 0 calc(50% - 20px); /* Take up half the width minus the space for margins */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
 /* Header styles */
 h1 {
     font-size: 24px;
@@ -27,15 +40,11 @@ h2 {
     font-size: 26px;
     color: var(--color-black);
     font-weight: 500;
-    padding-top: 50px;
     padding-bottom: 15px;
 }
 
 header {
-    display: flex;
-    /* Use Flexbox for layout */
-    flex-direction: column;
-    /* Stack items vertically */
+    flex: 1;
 }
 
 /* Container styles */
@@ -53,28 +62,12 @@ header {
     box-sizing: border-box;
 }
 
-#function-input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    display: inline-block;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    border: 1.5px solid var(--color-black);
-}
-
-
+/* Display box outline for tracked functions section */
 .function-container {
-    align-items: center;
     border: 2px solid var(--color-black);
-    margin-top: 10px;
     background-color: var(--color-white);
     border-radius: 5px;
-    flex: 0 0 calc(50% - 50px);
-    /* Take up half the width minus the space for margin */
     padding: 20px;
-    /* Add padding for better appearance */
     box-sizing: border-box;
 }
 
@@ -90,44 +83,11 @@ input[type="text"], select {
     border: 1.5px solid var(--color-black);
 }
 
-
-/* Add button styles */
-#add {
-    background-color: var(--color-primary);
-    color: var(--color-black);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    font-weight: 700;
-}
-
-#add:hover {
-    background-color: var(--color-secondary);
-}
-
-#add:active {
-    border: 2px solid var(--color-black);
-    transform: scale(0.95);
-}
-
-#add:disabled {
-    background-color: var(--color-gray);
-    color: var(--color-light-gray);
-    cursor: not-allowed;
-}
-
 .placeholder-text {
     font-size: 20px;
     color: var(--color-gray);
 }
 
-
-main {
-    justify-content: space-between;
-    align-items: center;
-}
 
 /* Total Tracker Section */
 #total-tracker {
@@ -143,6 +103,7 @@ main {
 
 #total {
     margin-left: auto;
+    color: red;
 }
 
 /* Function Name label and box */
@@ -188,99 +149,12 @@ main {
     /* Ensure it takes full width */
 }
 
-.accordion {
-    margin-top: 10px;
-}
+
 
 /* Checkboxes in attributes */
 .checkbox-container label {
     display: block;
     padding: 10px;
-}
-
-/* Save button styles */
-#button-save {
-    background-color: var(--color-black);
-    color: var(--color-primary);
-    border: none;
-    padding: 12px 40px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    font-weight: 700;
-}
-
-#button-save:hover {
-    background-color: var(--color-dark-gray);
-    color: var(--color-secondary);
-}
-
-#button-save:active {
-    border: 2px solid var(--color-secondary);
-    color: var(--color-secondary);
-    transform: scale(0.95);
-}
-
-#button-save:disabled {
-    background-color: var(--color-gray);
-    color: var(--color-light-gray);
-    cursor: not-allowed;
-}
-
-/* Cancel button styles */
-#button-cancel {
-    background-color: var(--color-white);
-    color: var(--color-black);
-    border: 2px solid var(--color-primary);
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    font-weight: 700;
-}
-
-#button-cancel:hover {
-    background-color: var(--color-primary);
-}
-
-#button-cancel:active {
-    transform: scale(0.95);
-}
-
-#button-cancel:disabled {
-    background-color: var(--color-light-gray);
-    color: var(--color-gray);
-    cursor: not-allowed;
-}
-
-/* Accordion button styles */
-.accordion {
-    background-color: transparent;
-    color: black;
-    cursor: pointer;
-    padding: 10px 20px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    display: flex;
-    align-items: center;
-}
-
-/* Arrow style */
-.accordion .arrow {
-    margin-right: 10px;
-    font-size: 16px;
-    color: #CFB8FF;
-    transition: transform 0.3s;
-}
-
-/* Underlined text */
-.accordion .text {
-    text-decoration: underline;
-    font-size: 16px;
-    color: black;
 }
 
 /* Hidden panel */
@@ -291,44 +165,6 @@ main {
     border: 2px solid black;
     border-radius: 8px;
     margin-top: 5px;
-}
-
-/* Rotate arrow when active */
-.accordion.active .arrow {
-    transform: rotate(180deg);
-}
-
-/* Dropdown styling NOT WORKING YET!!!*/
-.dropdown-container select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid black;
-    color: red;
-    background-color: red;
-}
-
-.dropdown-container select:focus {
-    color: red;
-}
-
-.dropdown-container select option {
-    color: var(--primary-surface-color);
-}
-
-select#my-type {
-    font-size: 16px;
-    color: var(--color-gray);
-}
-
-/* Bootstrp */
-select#my-type.active {
-    background-color: var(--color-primary);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-select#my-scope {
-    font-size: 16px;
-    color: var(--color-gray);
 }
 
 /* Label Styling */
