@@ -53,6 +53,44 @@ header {
     box-sizing: border-box;
 }
 
+#function-input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1.5px solid var(--color-black);
+}
+
+
+.function-container {
+    align-items: center;
+    border: 2px solid var(--color-black);
+    margin-top: 10px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    flex: 0 0 calc(50% - 50px);
+    /* Take up half the width minus the space for margin */
+    padding: 20px;
+    /* Add padding for better appearance */
+    box-sizing: border-box;
+}
+
+/* Style the input boxes */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1.5px solid var(--color-black);
+}
+
+
 /* Add button styles */
 #add {
     background-color: var(--color-primary);
@@ -85,6 +123,7 @@ header {
     color: var(--color-gray);
 }
 
+
 main {
     justify-content: space-between;
     align-items: center;
@@ -106,6 +145,16 @@ main {
     margin-left: auto;
 }
 
+/* Function Name label and box */
+#modal-name {
+    align-items: center; /* Vertically centers the label and input */
+    gap: 10px; /* Adds space between the label and input */
+    max-width: 100%;
+}
+
+#modal-name label {
+    flex-shrink: 0; /* Prevents the label from shrinking */
+}
 
 /* Tracked Functions section */
 #modal-content {
@@ -146,11 +195,8 @@ main {
 /* Checkboxes in attributes */
 .checkbox-container label {
     display: block;
-    margin-bottom: 10px;
+    padding: 10px;
 }
-
-
-
 
 /* Save button styles */
 #button-save {
@@ -270,14 +316,29 @@ main {
 }
 
 select#my-type {
-    font-family: default;
     font-size: 16px;
-    font-weight: normal;
+    color: var(--color-gray);
 }
 
+/* Bootstrp */
 select#my-type.active {
     background-color: var(--color-primary);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select#my-scope {
+    font-size: 16px;
+    color: var(--color-gray);
+}
+
+/* Label Styling */
+label[for="my-name"],
+label[for="my-desc"],
+label[for="my-type"],
+label[for="my-scope"] {
+    font-size: 20px; /* Example styling */
+    margin-bottom: 6px; /* Space between labels */
+    display: block; /* Makes labels stack vertically */
 }
 
 /* Styles for mobile view */
