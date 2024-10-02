@@ -1,0 +1,140 @@
+button {
+    width: 150px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* MAkes edit and remove buttons to be on the same row */
+#button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+/* Add button styles */
+#add {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#add:hover {
+    background-color: var(--color-secondary);
+}
+
+#add:active {
+    border: 2px solid var(--color-black);
+    transform: scale(0.95);
+}
+
+#add:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+
+/* Edit button styles */
+#button-edit {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#button-edit:hover {
+    background-color: var(--color-secondary);
+}
+
+#button-edit:active {
+    border: 2px solid var(--color-black);
+    transform: scale(0.95);
+}
+
+#button-edit:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+
+/* Save button styles */
+#button-save {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#button-save:hover {
+    background-color: var(--color-dark-gray);
+    color: var(--color-secondary);
+}
+
+#button-save:active {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    transform: scale(0.95);
+}
+
+#button-save:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+
+/* Remove button styles */
+#button-remove {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#button-remove:hover {
+    background-color: var(--color-primary);
+}
+
+#button-remove:active {
+    transform: scale(0.95);
+}
+
+#button-remove:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    cursor: not-allowed;
+}
+
+
+/* Cancel button styles */
+#button-cancel {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#button-cancel:hover {
+    background-color: var(--color-primary);
+}
+
+#button-cancel:active {
+    transform: scale(0.95);
+}
+
+#button-cancel:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    cursor: not-allowed;
+}
