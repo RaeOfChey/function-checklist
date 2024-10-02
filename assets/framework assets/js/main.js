@@ -1,14 +1,31 @@
+/* $(function() {
+    // Add active class when the dropdown is interacted with
+    $('#my-type').on('focus', function () {
+        $(this).closest('section').addClass('active');
+    }).on('blur', function () {
+        $(this).closest('section').removeClass('active');
+    });
+
+    // Optionally handle change event
+    $('#my-type').on('change', function () {
+        const selectedValue = $(this).val();
+        console.log(`Selected function type: ${selectedValue}`);
+        // Add any other actions you want to perform on change
+    });
+}); */
+
 $(function() {
+    // Add active class when the dropdown is interacted with
+    $('#my-type').on('focus', function () {
+        $(this).addClass('active'); // Add active class to the select element
+    }).on('blur', function () {
+        $(this).removeClass('active'); // Remove active class from the select element
+    });
 
-    $('.btn-link[aria-expanded="true"]').closest('.accordion-item').addClass('active');
-  $('.collapse').on('show.bs.collapse', function () {
-	  $(this).closest('.accordion-item').addClass('active');
-	});
-
-  $('.collapse').on('hidden.bs.collapse', function () {
-	  $(this).closest('.accordion-item').removeClass('active');
-	});
-
-    
-
+    // Optionally handle change event
+    $('#my-type').on('change', function () {
+        const selectedValue = $(this).val();
+        console.log(`Selected function type: ${selectedValue}`);
+        // Add any other actions you want to perform on change
+    });
 });
