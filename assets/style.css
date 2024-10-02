@@ -11,6 +11,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    margin: 0 100px;
 }
 
 /* Header styles */
@@ -26,14 +27,15 @@ h2 {
     font-size: 26px;
     color: var(--color-black);
     font-weight: 500;
-    margin: 0 0 10px 100px;
     padding-top: 50px;
     padding-bottom: 15px;
 }
 
 header {
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
+    display: flex;
+    /* Use Flexbox for layout */
+    flex-direction: column;
+    /* Stack items vertically */
 }
 
 /* Container styles */
@@ -41,15 +43,53 @@ header {
     display: flex;
     align-items: center;
     border: 2px solid var(--color-black);
-    padding: 10px;
     margin-top: 10px;
     background-color: var(--color-white);
     border-radius: 5px;
-    flex: 0 0 calc(50% - 50px); /* Take up half the width minus the space for margin */
-    margin: 0 100px; /* 100px margin on left and right */
-    padding: 20px; /* Add padding for better appearance */
+    flex: 0 0 calc(50% - 50px);
+    /* Take up half the width minus the space for margin */
+    padding: 20px;
+    /* Add padding for better appearance */
     box-sizing: border-box;
 }
+
+#function-input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1.5px solid var(--color-black);
+}
+
+
+.function-container {
+    align-items: center;
+    border: 2px solid var(--color-black);
+    margin-top: 10px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    flex: 0 0 calc(50% - 50px);
+    /* Take up half the width minus the space for margin */
+    padding: 20px;
+    /* Add padding for better appearance */
+    box-sizing: border-box;
+}
+
+/* Style the input boxes */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1.5px solid var(--color-black);
+}
+
 
 /* Add button styles */
 #add {
@@ -83,10 +123,79 @@ header {
     color: var(--color-gray);
 }
 
+
 main {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Total Tracker Section */
+#total-tracker {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+#total-tracker h2 {
+    flex: 0 1 auto;
+}
+
+#total {
+    margin-left: auto;
+}
+
+/* Function Name label and box */
+#modal-name {
+    align-items: center; /* Vertically centers the label and input */
+    gap: 10px; /* Adds space between the label and input */
+    max-width: 100%;
+}
+
+#modal-name label {
+    flex-shrink: 0; /* Prevents the label from shrinking */
+}
+
+/* Tracked Functions section */
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: flex-start;
+    /* Align items to the start (left) */
+    border: 2px solid var(--color-black);
+    margin-top: 10px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    padding: 20px;
+    /* Add padding for better appearance */
+    box-sizing: border-box;
+}
+
+#modal-content form {
+    display: flex;
+    flex-direction: column;
+    /* Stack form elements vertically */
+    width: 100%;
+    /* Take full width of the container */
+}
+
+#Input {
+    display: flex;
+    flex-direction: column;
+    /* Stack input sections vertically */
+    width: 100%;
+    /* Ensure it takes full width */
+}
+
+.accordion {
+    margin-top: 10px;
+}
+
+/* Checkboxes in attributes */
+.checkbox-container label {
+    display: block;
+    padding: 10px;
 }
 
 /* Save button styles */
@@ -157,72 +266,102 @@ main {
     outline: none;
     display: flex;
     align-items: center;
-  }
-  
-  /* Arrow style */
-  .accordion .arrow {
+}
+
+/* Arrow style */
+.accordion .arrow {
     margin-right: 10px;
     font-size: 16px;
     color: #CFB8FF;
     transition: transform 0.3s;
-  }
-  
-  /* Underlined text */
-  .accordion .text {
+}
+
+/* Underlined text */
+.accordion .text {
     text-decoration: underline;
     font-size: 16px;
     color: black;
-  }
-  
-  /* Hidden panel */
-  .panel {
+}
+
+/* Hidden panel */
+.panel {
     padding: 10px 20px;
     display: none;
     background-color: white;
     border: 2px solid black;
     border-radius: 8px;
     margin-top: 5px;
-  }
-  
-  /* Rotate arrow when active */
-  .accordion.active .arrow {
-    transform: rotate(180deg);
-  }
+}
 
-  /* Dropdown styling */
+/* Rotate arrow when active */
+.accordion.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown styling NOT WORKING YET!!!*/
 .dropdown-container select {
     width: 100%;
     padding: 10px;
     border: 1px solid black;
-    color: var(--color-american_gray);
-    background-color: var(--fixed-light-color);
-    }
-    
-    .dropdown-container select:focus {
+    color: red;
+    background-color: red;
+}
+
+.dropdown-container select:focus {
+    color: red;
+}
+
+.dropdown-container select option {
     color: var(--primary-surface-color);
-    }
-    
-    .dropdown-container select option {
-    color: var(--primary-surface-color);
-    }
- 
-    /* Styles for mobile view */
-    @media (max-width: 768px) {
+}
+
+select#my-type {
+    font-size: 16px;
+    color: var(--color-gray);
+}
+
+/* Bootstrp */
+select#my-type.active {
+    background-color: var(--color-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select#my-scope {
+    font-size: 16px;
+    color: var(--color-gray);
+}
+
+/* Label Styling */
+label[for="my-name"],
+label[for="my-desc"],
+label[for="my-type"],
+label[for="my-scope"] {
+    font-size: 20px; /* Example styling */
+    margin-bottom: 6px; /* Space between labels */
+    display: block; /* Makes labels stack vertically */
+}
+
+/* Styles for mobile view */
+@media (max-width: 768px) {
 
     h1 {
-        font-size: 1.5rem; /* Adjust the font size for mobile */
-        margin: 0; /* Remove margin */
+        font-size: 1.5rem;
+        /* Adjust the font size for mobile */
+        margin: 0;
+        /* Remove margin */
     }
 
     h2 {
-        margin: 25px 0; /* Add margin only above and below */
-        padding-bottom: 0;
+        margin: 25px 0;
+        /* Add margin only above and below */
+        padding-bottom: 0px;
+        padding-top: 20px;
     }
 
     .add-new-container {
         flex: 0 0 100%;
-        margin: 25px 0;
+        margin: 0;
         padding: 20px;
     }
 
-    }
+}
