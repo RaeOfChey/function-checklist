@@ -9,6 +9,7 @@ const cancel = document.getElementById(`button-cancel`);
 const addButton = document.getElementById(`add`);
 const modal = document.getElementById(`modal`);
 const mainList = document.querySelector(`#the-list`);
+const error = document.getElementById(`error`);
 
 const totalNumber = document.createElement(`h2`);
 
@@ -81,31 +82,43 @@ function renderList() {
             description.appendChild(funcDescription);
             attributes.appendChild(attList);
             attList.append(funcType, funcScope);
+
+            attributes.style.display = `none`;
+
+            seeMore.addEventListener(`click`, () => {
+                showDetails(attributes);
+            })
+            
+            erase.addEventListener(`click`, () => {
+                remove(i);
+            });
+            
+            edit.addEventListener(`click`, () => {
+                change(i);
+            });
+
         }
     }
 }
 
 function addFunction (event) {
+    event.preventDefault();
 
     if (modal.style.display === `none`) {
         showModal();
         return;
     }
 
-    event.preventDefault();
     
-    const title = titleInput.value;
-    const description = descriptionInput.value;
-    const type = typeInput.value;
-    const scope = scopeInput.value;
+    const title = titleInput.value.trim();
+    const description = descriptionInput.value.trim();
+    const type = typeInput.value.trim();
+    const scope = scopeInput.value.trim();
     const called = calledInput.checked;
     
-    const newFunction = {
-        title: title,
-        description: description,
-        type: type,
-        scope: scope,
-        called: called,
+    if (!title || !description || !type || !scope) {
+        error.style.display = `block`;
+        return;
     }
     
     let funcList = localStorage.getItem(`funcList`)
@@ -118,22 +131,84 @@ function addFunction (event) {
         funcList = JSON.parse(funcList);
         
     }
-    
-    funcList.push(newFunction);
-    
+
+    if (editIndex !== null) {
+
+        funcList[editIndex] = {
+            title,
+            description,
+            type,
+            scope,
+            called,
+        };
+        editIndex = null;
+    } else {
+        
+        const newFunction = {
+            title: title,
+            description: description,
+            type: type,
+            scope: scope,
+            called: called,
+        }
+        
+        funcList.push(newFunction);
+    }
+        
     localStorage.setItem(`funcList`, JSON.stringify(funcList));
     renderList();
     updateTracker();
     hideModal();
 }
 
+function remove (index) {
+    let funcList = JSON.parse(localStorage.getItem(`funcList`));
+
+    funcList.splice(index, 1);
+    localStorage.setItem(`funcList`, JSON.stringify(funcList));
+    renderList();
+    updateTracker();
+}
+
+let editIndex = null;
+
+function change(index) {
+    let funcList = JSON.parse(localStorage.getItem(`funcList`));
+    const editItem = funcList[index];
+
+    titleInput.value = editItem.title;
+    descriptionInput.value = editItem.description;
+    typeInput.value = editItem.type;
+    scopeInput.value = editItem.scope;
+    calledInput.checked = editItem.called;
+
+    editIndex = index
+
+    showModal();
+}
+
+function showDetails(attributes) {
+
+    if (attributes.style.display === `none`) {
+        attributes.style.display = `block`;
+} else {
+        attributes.style.display = `none`;
+    }
+}
+
 
 function showModal() {
+    error.style.display = `none`;
     modal.style.display = `block`;
 }
 
 function hideModal() {
     modal.style.display = `none`;
+    titleInput.value = ``;
+    descriptionInput.value = ``;
+    typeInput.value = ``;
+    scopeInput.value = ``;
+    calledInput.checked = false;
 }
 
 document.addEventListener(`DOMContentLoaded`, function() {
@@ -142,6 +217,14 @@ document.addEventListener(`DOMContentLoaded`, function() {
     renderList();
   });
 
-addButton.addEventListener(`click`, showModal);
+
+addButton.addEventListener(`click`, () => {
+    if (modal.style.display === `block`) {
+        hideModal();
+    } else {
+        showModal();
+    }
+});
+
 cancel.addEventListener(`click`, hideModal);
 save.addEventListener(`click`, addFunction);
