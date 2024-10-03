@@ -7,7 +7,7 @@ const scopeInput = document.getElementById(`my-scope`);
 const save = document.getElementById(`button-save`);
 const cancel = document.getElementById(`button-cancel`);
 const addButton = document.getElementById(`add`);
-const modal = document.getElementById(`modal`);
+const modal = document.getElementById(`myModal`);
 const modalHeader = document.getElementById(`modal-header`);
 const mainList = document.querySelector(`#the-list`);
 const error = document.getElementById(`error`);
@@ -77,6 +77,9 @@ function renderList() {
 
             edit.textContent = `Edit`;
             edit.id = `editButton`;
+            edit.className = `btn btn-primary`;
+            edit.setAttribute(`data-bs-toggle`,`modal`);
+            edit.setAttribute(`data-bs-target`,`#myModal`);
             erase.textContent = `Erase`;
             erase.id = `eraseButton`;
             seeMore.textContent = `See More`;
@@ -122,12 +125,6 @@ function renderList() {
 function addFunction(event) {
     event.preventDefault();
 
-    if (modal.style.display === `none`) {
-        showModal();
-        return;
-    }
-
-    
     const title = titleInput.value.trim();
     const description = descriptionInput.value.trim();
     const type = typeInput.value.trim();
@@ -147,9 +144,8 @@ function addFunction(event) {
         funcList = JSON.parse(funcList);
     }
 
-    if (editIndex !== null) {
-
-        funcList[editIndex] = {
+    if (currentEditIndex !== -1) { // Updated from editIndex to currentEditIndex
+        funcList[currentEditIndex] = {
             title,
             description,
             type,
@@ -197,8 +193,9 @@ function change(index) {
     typeInput.value = editItem.type;
     scopeInput.value = editItem.scope;
 
-    editIndex = index
+    currentEditIndex = index
 
+    modalHeader.textContent = 'Edit Function'; // Set modal header for editing function
     showModal();
 }
 
@@ -216,11 +213,10 @@ function showDetails(attributes, seeMore) {
 
 function showModal() {
     error.style.display = `none`;
-    modal.style.display = `block`;
 }
 
 function hideModal() {
-    modal.style.display = `none`;
+    console.log(modal)
     titleInput.value = ``;
     descriptionInput.value = ``;
     typeInput.value = ``;
@@ -231,30 +227,35 @@ function hideModal() {
 }
 
 document.addEventListener(`DOMContentLoaded`, function () {
-    modal.style.display = `none`;
     updateTracker();
     renderList();
 });
 
 addButton.addEventListener(`click`, () => {
-    currentEditIndex = -1; // Reset edit index for adding new function
-    titleInput.value = '';
-    descriptionInput.value = '';
-    typeInput.value = '';
-    scopeInput.value = '';
-    calledInput.checked = false;
+    if (currentEditIndex === -1) {
+        // Reset the form fields for adding a new function
+        titleInput.value = '';
+        descriptionInput.value = '';
+        typeInput.value = '';
+        scopeInput.value = '';
+        calledInput.checked = false;
 
-    modalHeader.textContent = 'Add a New Function'; // Set modal header for adding new function
-    showModal();
-});
+        modalHeader.textContent = 'Add a New Function'; // Set modal header for adding a new function
+    } else {
+        // If editing, populate the fields with the selected function's details
+        let funcList = JSON.parse(localStorage.getItem(`funcList`));
+        const editItem = funcList[currentEditIndex];
 
+        titleInput.value = editItem.title;
+        descriptionInput.value = editItem.description;
+        typeInput.value = editItem.type;
+        scopeInput.value = editItem.scope;
+        calledInput.checked = editItem.called;
 
-addButton.addEventListener(`click`, () => {
-    if (modal.style.display === `none`) {
-        showModal();
-    } //else {
-       // hideModal();
-   // }
+        modalHeader.textContent = 'Edit Function'; // Set modal header for editing a function
+    }
+
+    showModal(); // Show the modal regardless of add/edit mode
 });
 
 cancel.addEventListener(`click`, hideModal);
