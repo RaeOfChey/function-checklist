@@ -196,7 +196,6 @@ function change(index) {
     descriptionInput.value = editItem.description;
     typeInput.value = editItem.type;
     scopeInput.value = editItem.scope;
-    calledInput.checked = editItem.called;
 
     editIndex = index
 
@@ -226,7 +225,9 @@ function hideModal() {
     descriptionInput.value = ``;
     typeInput.value = ``;
     scopeInput.value = ``;
-    calledInput.checked = false;
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
 }
 
 document.addEventListener(`DOMContentLoaded`, function () {
