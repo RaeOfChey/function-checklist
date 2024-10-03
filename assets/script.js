@@ -57,7 +57,7 @@ function renderList() {
             funcName.textContent = info.title;
             description.textContent = `Description`;
             funcDescription.textContent = info.description;
-            attributes.textContent = `Attributes`;
+            attributes.textContent = `Tips and details`;
             funcType.textContent = `Function type: ` + info.type;
             funcScope.textContent = `Function scope: ` + info.scope;
 
@@ -104,7 +104,7 @@ function renderList() {
             attributes.style.display = `none`;
 
             seeMore.addEventListener(`click`, () => {
-                showDetails(attributes);
+                showDetails(attributes, seeMore);
             })
             
             erase.addEventListener(`click`, () => {
@@ -203,12 +203,14 @@ function change(index) {
     showModal();
 }
 
-function showDetails(attributes) {
+function showDetails(attributes, seeMore) {
 
     if (attributes.style.display === `none`) {
         attributes.style.display = `block`;
+        seeMore.textContent = `See Less`;
 } else {
         attributes.style.display = `none`;
+        seeMore.textContent= `See More`;
     }
 }
 
