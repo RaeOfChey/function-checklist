@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="assets/button.css" />
-    <!-- <link rel="stylesheet" href="assets/interactive.css" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <!-- <script src="assets/framework assets/js/jquery-3.3.1.min.js"></script> -->
     <script src="assets/script.js" defer></script>
-    <!-- <script src="assets/framework assets/js/main.js"></script> -->
     <title>FuncTastic</title>
 </head>
 
@@ -18,104 +16,112 @@
 
     <header>
         <h1>✅ FuncTastic</h1>
-        <section id = "add-new">
-            <button id = "add">Add</button>
+        <section id="add-new">
+            <button id="add" data-bs-toggle="modal" data-bs-target="#myModal">Add</button>
             <div class="main-container">
                 <div class="container">
-                        <h2>Add a new function</h2>
-                        <!-- <div class="add-new-container"><button id="add">Add</button>
-                            <input type="text" id="function-input" placeholder="Add a new function..." />
-                        </div> -->
+                    <h2>Add a new function</h2>
                 </div>
         </section>
     </header>
 
 
-            <main>
-                <section class="tracked-function-container">
-                    <section id="total-tracker">
-                        <h2>Tracked Functions</h2>
-                        <h2 id="total">total:<!--total var here --></h2>
-                    </section>
-                    <section id="main-list">
-                        <ul id="the-list"><!--main list goes here--></ul>
-                    </section>
-                </section>
-            </main>
-        </div>
+    <main>
+        <section class="tracked-function-container">
 
-        <section id="modal">
-            <div id="modal-content">
-                <h2 id="modal-header">Add a New Function</h2> <!-- New header element -->
-                <form>
-                    <section id="Input">
-                        <div id="modal-name">
-                            <label for="my-name">Function Name</label>
-                            <input type="text" id="my-name" name="modal-name" placeholder="Name your function" required>
-                        </div>
+            <section id="total-tracker">
+                <h2>Tracked Functions</h2>
+                <h2 id="total">total:<!--total var here --></h2>
+            </section>
 
-                        <br>
+            <section id="main-list">
+                <ul id="the-list"><!--main list goes here--></ul>
+            </section>
 
-                        <div id="modal-desc">
-                            <label for="my-desc">Function Description</label>
-                            <input type="text" id="my-desc" name="modal-desc" placeholder="Describe your function"
-                                required>
-                        </div>
+        </section>
+    </main>
 
-                    <h2>Function information</h2>
-                        <br>
-
-                        <div class="panel">
-                            <p>Here are the hidden attributes that will now be visible.</p>
-                        </div>
-                    </section>
-
-                    <h2>Attributes</h2>
-
-                    <section id="modal-type">
-                        <label for="my-type">Function Type</label>
-                        <select id="my-type" name="modal-type">
-                            <option value="" disabled selected>Choose an option</option>
-                            <option value="named">Named</option>
-                            <option value="anonymous">Anonymous</option>
-                            <option value="callback">Callback</option>
-                        </select>
-                    </section>
-
-                    <div class="checkbox-container">
-                        <label><input type="checkbox" id="beingcalled" name = "called" value = "Make sure to call your function!"> Is the function being called?</label>
-                        <label><input type="checkbox" id="redirect" name = "redirect" value = "Make sure to redirect to the proper URL"> Does the function redirect a page?</label>
-                        <label><input type="checkbox" id = "dependent" name = "dependent" value = "Define any variables, functions, or other information outside the function scope"> Does the function have any dependencies?</label>
-                        <label><input type="checkbox" id = "success" name = "success" value = "If the function is executing but issues are still coming up, make sure any information is being returned or passed from the function"> Is the function executed successfully?</label>
-                        <label><input type="checkbox" id = "return" name = "return" value = "Make sure values are returned globally using the: return; method"> Does the function return any values?</label>
-                        <label><input type="checkbox" id = "parameters" name="parameters" value = "Ensure the function is recieving the necessary pass along information for its parameter"> Does the function have any parameters?</label>
-                        <label><input type="checkbox" id = "arguments" name = "arguments" value = "Check that necessary information from this function is being passed to other functions"> Does the function pass along arguments to others?</label>
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modal-header"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-header">Add a New Function</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <form> <!-- Single form structure -->
+                            <div class="form-group">
+                                <label for="my-name">Function Name</label>
+                                <input type="text" class="form-control" id="my-name" name="modal-name"
+                                    placeholder="Name your function" required>
+                            </div>
 
-                    <section id="modal-scope">
-                        <label for="my-scope">Function Scope</label>
-                        <select id="my-scope" name="modal-scope">
-                            <option value="" disabled selected>Choose an option</option>
-                            <option value="global">Global</option>
-                            <option value="local">Local</option>
-                            <option value="block">Block</option>
-                        </select>
-                    </section>
+                            <div class="form-group">
+                                <label for="my-desc">Function Description</label>
+                                <input type="text" class="form-control" id="my-desc" name="modal-desc"
+                                    placeholder="Describe your function" required>
+                            </div>
 
-                    <section id="buttons">
-                        <button id="button-save" type="submit">Save</button>
-                        <button id="button-cancel" type="button">Cancel</button>
-                    </section>
+                            <h5>Function information</h5>
+                            <div class="panel">
+                                <p>Here are the hidden attributes that will now be visible.</p>
+                            </div>
 
+                            <h5>Attributes</h5>
+                            <div class="form-group">
+                                <label for="my-type">Function Type</label>
+                                <select class="form-control" id="my-type" name="modal-type" required>
+                                    <option value="" disabled selected>Choose an option</option>
+                                    <option value="named">Named</option>
+                                    <option value="anonymous">Anonymous</option>
+                                    <option value="callback">Callback</option>
+                                </select>
+                            </div>
 
-                <section id = "incomplete">
-                    <p id = "error">Please enter a title, description, and select the scope and type.</p>
-                </section>
+                            <div class="checkbox-container">
+                                <label><input type="checkbox" id="beingcalled" name = "called" value = "Make sure to call your function!"> Is the function being called?</label><br>
+                                <label><input type="checkbox" id="redirect" name = "redirect" value = "Make sure to redirect to the proper URL"> Does the function redirect a page?</label><br>
+                                <label><input type="checkbox" id = "dependent" name = "dependent" value = "Define any variables, functions, or other information outside the function scope"> Does the function have any dependencies?</label><br>
+                                <label><input type="checkbox" id = "success" name = "success" value = "If the function is executing but issues are still coming up, make sure any information is being returned or passed from the function"> Is the function executed successfully?</label><br>
+                                <label><input type="checkbox" id = "return" name = "return" value = "Make sure values are returned globally using the: return; method"> Does the function return any values?</label><br>
+                                <label><input type="checkbox" id = "parameters" name="parameters" value = "Ensure the function is recieving the necessary pass along information for its parameter"> Does the function have any parameters?</label><br>
+                                <label><input type="checkbox" id = "arguments" name = "arguments" value = "Check that necessary information from this function is being passed to other functions"> Does the function pass along arguments to others?</label><br>
+                            </div>
 
-            </form>
+                            <div class="form-group">
+                                <label for="my-scope">Function Scope</label>
+                                <select class="form-control" id="my-scope" name="modal-scope" required>
+                                    <option value="" disabled selected>Choose an option</option>
+                                    <option value="global">Global</option>
+                                    <option value="local">Local</option>
+                                    <option value="block">Block</option>
+                                </select>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button id="button-save" type="submit" class="btn btn-primary"data-bs-dismiss="modal">Save</button>
+                                <button id="button-cancel" type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancel</button>
+                            </div>
+
+                            <div id="incomplete">
+                                <p id="error" class="text-danger">Please enter a title, description, and select the
+                                    scope and type.</p>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
 
-</body>
+        <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    </body>
 
-</html>
+    </html>

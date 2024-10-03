@@ -157,3 +157,27 @@ section#buttons {
     justify-content: space-between; /* Align buttons to the left */
     margin-top: 10px; /* Add space between this container and the See More button */
 }
+
+/* ----- Dropdown boxes Styling ----- */
+
+/* Shared styles for both dropdowns before selection */
+select#my-type,
+select#my-scope {
+    font-size: 16px;
+    color: var(--color-gray);
+    background-color: white;
+}
+
+/* Shared styles during choosing selection */
+select#my-type.active,
+select#my-scope.active {
+    background-color: var(--color-primary);
+    color: black;
+}
+
+/* Shared styles after choosing selection */
+select#my-type.selected,
+select#my-scope.selected {
+    background-color: white;
+    color: black;
+}
