@@ -13,6 +13,7 @@ const mainList = document.querySelector(`#the-list`);
 const error = document.getElementById(`error`);
 const redirectInput = document.getElementById('redirect');
 const dependenciesInput = document.getElementById('dependencies');
+const checkboxes = document.querySelectorAll(`.checkbox-container input[type = "checkbox"]`);
 
 const totalNumber = document.createElement(`h2`);
 totalNumber.className = 'total-number';
@@ -59,6 +60,15 @@ function renderList() {
             attributes.textContent = `Attributes`;
             funcType.textContent = `Function type: ` + info.type;
             funcScope.textContent = `Function scope: ` + info.scope;
+
+            checkboxes.forEach(checkbox => {
+                if(checkbox.checked) {
+
+                const listItem = document.createElement(`li`);
+                listItem.textContent = checkbox.value;
+                attList.appendChild(listItem);
+                }
+            });
 
             // Create buttons
             const edit = document.createElement(`button`);
