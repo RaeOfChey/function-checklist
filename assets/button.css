@@ -1,0 +1,159 @@
+button {
+    width: 150px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* Add button styles */
+#add {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#add:hover {
+    background-color: var(--color-secondary);
+}
+
+#add:active {
+    border: 2px solid var(--color-black);
+    transform: scale(0.95);
+}
+
+#add:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+
+/* See More button styles' */
+#moreButton {
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    padding: 20px 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+/* Edit and erase button on the same line */
+.edit-erase-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Edit button styles */
+#editButton {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#editButton:hover {
+    background-color: var(--color-secondary);
+}
+
+#editButton:active {
+    border: 2px solid var(--color-black);
+    transform: scale(0.95);
+}
+
+#editButton:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+
+/* Save button styles */
+#button-save {
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#button-save:hover {
+    background-color: var(--color-dark-gray);
+    color: var(--color-secondary);
+}
+
+#button-save:active {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    transform: scale(0.95);
+}
+
+#button-save:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-light-gray);
+    cursor: not-allowed;
+}
+
+
+/* Erase button styles */
+#eraseButton {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#eraseButton:hover {
+    background-color: var(--color-primary);
+}
+
+#eraseButton:active {
+    transform: scale(0.95);
+}
+
+#eraseButton:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    cursor: not-allowed;
+}
+
+
+/* Cancel button styles */
+#button-cancel {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#button-cancel:hover {
+    background-color: var(--color-primary);
+}
+
+#button-cancel:active {
+    transform: scale(0.95);
+}
+
+#button-cancel:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    cursor: not-allowed;
+}
+
+section#buttons {
+    display: flex; /* Make sure buttons are side by side */
+    justify-content: space-between; /* Align buttons to the left */
+    margin-top: 10px; /* Add space between this container and the See More button */
+}
