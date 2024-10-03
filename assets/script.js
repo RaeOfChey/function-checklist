@@ -125,12 +125,6 @@ function renderList() {
 function addFunction(event) {
     event.preventDefault();
 
-    // if (modal.style.display === `none`) {
-    //     showModal();
-    //     return;
-    // }
-
-    
     const title = titleInput.value.trim();
     const description = descriptionInput.value.trim();
     const type = typeInput.value.trim();
@@ -150,9 +144,8 @@ function addFunction(event) {
         funcList = JSON.parse(funcList);
     }
 
-    if (editIndex !== null) {
-
-        funcList[editIndex] = {
+    if (currentEditIndex !== -1) { // Updated from editIndex to currentEditIndex
+        funcList[currentEditIndex] = {
             title,
             description,
             type,
