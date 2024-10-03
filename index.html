@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="assets/button.css" />
-    <link rel="stylesheet" href="assets/interactive.css" />
+    <!-- <link rel="stylesheet" href="assets/interactive.css" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <script src="assets/framework assets/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="assets/framework assets/js/jquery-3.3.1.min.js"></script> -->
     <script src="assets/script.js" defer></script>
-    <script src="assets/framework assets/js/main.js"></script>
+    <!-- <script src="assets/framework assets/js/main.js"></script> -->
     <title>FuncTastic</title>
 </head>
 
@@ -83,13 +83,13 @@
                     </section>
 
                     <div class="checkbox-container">
-                        <label><input type="checkbox" id="beingcalled"> Is the function being called?</label>
-                        <label><input type="checkbox"> Does the function redirect a page?</label>
-                        <label><input type="checkbox"> Does the function have any dependencies?</label>
-                        <label><input type="checkbox"> Is the function executed successfully?</label>
-                        <label><input type="checkbox"> Does the function return any values?</label>
-                        <label><input type="checkbox"> Does the function have any parameters?</label>
-                        <label><input type="checkbox"> Does the function pass along arguments to others?</label>
+                        <label><input type="checkbox" id="beingcalled" name = "called" value = "Make sure to call your function!"> Is the function being called?</label>
+                        <label><input type="checkbox" id="redirect" name = "redirect" value = "Make sure to redirect to the proper URL"> Does the function redirect a page?</label>
+                        <label><input type="checkbox" id = "dependent" name = "dependent" value = "Define any variables, functions, or other information outside the function scope"> Does the function have any dependencies?</label>
+                        <label><input type="checkbox" id = "success" name = "success" value = "If the function is executing but issues are still coming up, make sure any information is being returned or passed from the function"> Is the function executed successfully?</label>
+                        <label><input type="checkbox" id = "return" name = "return" value = "Make sure values are returned globally using the: return; method"> Does the function return any values?</label>
+                        <label><input type="checkbox" id = "parameters" name="parameters" value = "Ensure the function is recieving the necessary pass along information for its parameter"> Does the function have any parameters?</label>
+                        <label><input type="checkbox" id = "arguments" name = "arguments" value = "Check that necessary information from this function is being passed to other functions"> Does the function pass along arguments to others?</label>
                     </div>
 
                     <section id="modal-scope">
