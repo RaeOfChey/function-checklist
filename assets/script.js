@@ -130,7 +130,7 @@ function addFunction(event) {
     } else {
         funcList.push(newFunction);
     }
-    
+
     // Ensure to save the updated list to local storage
     localStorage.setItem(`funcList`, JSON.stringify(funcList));
     renderList();

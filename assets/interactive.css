@@ -66,21 +66,28 @@ select#my-scope.selected {
 
 /* Custom checkbox */
 .checkbox-container label::before {
-    content: ''; /* Create a pseudo-element */
-    display: inline-block; /* Make it behave like a block */
+    content: '';
+    /* Create a pseudo-element */
+    display: inline-block;
+    /* Make it behave like a block */
     width: 15px;
     height: 15px;
     border: 2px solid var(--color-primary);
     border-radius: 4px;
-    vertical-align: middle; /* Align the checkbox vertically */
+    vertical-align: middle;
+    /* Align the checkbox vertically */
     position: absolute;
     left: 0;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Aligns boxes vertically with their labels */
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Aligns boxes vertically with their labels */
 }
 
 /* Style when boxes are checked */
-.checkbox-container input[type="checkbox"]:checked + label::before {
-    background-color: var(--color-black); /* Fill color when checked */
-    border-color: var(--color-black); /* Change border color */
+.checkbox-container input[type="checkbox"]:checked+label::before {
+    background-color: var(--color-black);
+    /* Fill color when checked */
+    border-color: var(--color-black);
+    /* Change border color */
 }

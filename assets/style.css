@@ -15,14 +15,19 @@ body {
 }
 
 .main-container {
-    display: flex; /* Use flexbox to align children side by side */
-    justify-content: space-between; /* Space between columns */
+    display: flex;
+    /* Use flexbox to align children side by side */
+    justify-content: space-between;
+    /* Space between columns */
     align-items: flex-start;
 }
 
-.container, /* for the header section */
-main { /* for the main section */
-    flex: 0 0 calc(50% - 20px); /* Take up half the width minus the space for margins */
+.container,
+/* for the header section */
+main {
+    /* for the main section */
+    flex: 0 0 calc(50% - 20px);
+    /* Take up half the width minus the space for margins */
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -42,7 +47,8 @@ h2 {
     font-weight: 500;
 }
 
-h3, h4 {
+h3,
+h4 {
     font-size: 22px;
     color: var(--color-black);
     font-weight: 500;
@@ -89,7 +95,8 @@ header {
 }
 
 /* Style the input boxes */
-input[type="text"], select {
+input[type="text"],
+select {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -130,13 +137,16 @@ input[type="text"], select {
 
 /* Function Name label and box */
 #modal-name {
-    align-items: center; /* Vertically centers the label and input */
-    gap: 10px; /* Adds space between the label and input */
+    align-items: center;
+    /* Vertically centers the label and input */
+    gap: 10px;
+    /* Adds space between the label and input */
     max-width: 100%;
 }
 
 #modal-name label {
-    flex-shrink: 0; /* Prevents the label from shrinking */
+    flex-shrink: 0;
+    /* Prevents the label from shrinking */
 }
 
 /* Tracked Functions section */
@@ -175,8 +185,6 @@ input[type="text"], select {
     display: block;
 }
 
-
-
 /* Checkboxes in attributes */
 .checkbox-container label {
     display: block;
@@ -198,9 +206,12 @@ label[for="my-name"],
 label[for="my-desc"],
 label[for="my-type"],
 label[for="my-scope"] {
-    font-size: 20px; /* Example styling */
-    margin-bottom: 6px; /* Space between labels */
-    display: block; /* Makes labels stack vertically */
+    font-size: 20px;
+    /* Example styling */
+    margin-bottom: 6px;
+    /* Space between labels */
+    display: block;
+    /* Makes labels stack vertically */
 }
 
 /* Styles for mobile view */
