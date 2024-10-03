@@ -1,38 +1,16 @@
 /* Accordion for 'See all attributes' */
-.accordion {
+#moreButton {
     background-color: transparent;
     color: black;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 20px 0;
     width: 100%;
     text-align: left;
     border: none;
-    border-radius: 8px;
-    outline: none;
-    display: flex;
-    align-items: center;
     font-weight: 500;
-}
-
-/* Arrow style when not active */
-.accordion .arrow {
-    margin-right: 10px;
-    font-size: 16px;
-    color: #CFB8FF;
-}
-
-/* Rotate arrow when active */
-.accordion.active .arrow {
-    transform: rotate(180deg);
-}
-
-/* Underlined text */
-.accordion .text {
     text-decoration: underline;
     font-size: 16px;
-    color: black;
 }
-
 
 /* ----- Dropdown boxes Styling ----- */
 

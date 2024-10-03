@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0 100px;
+    margin: 50px 100px;
 }
 
 .main-container {
@@ -40,8 +40,24 @@ h2 {
     font-size: 26px;
     color: var(--color-black);
     font-weight: 500;
+}
+
+h3, h4 {
+    font-size: 22px;
+    color: var(--color-black);
+    font-weight: 500;
+    padding-bottom: 15px;
+    list-style-type: none;
+
+}
+
+p {
+    font-size: 18px;
+    color: var(--color-black);
+    font-weight: 500;
     padding-bottom: 15px;
 }
+
 
 header {
     flex: 1;
@@ -63,12 +79,13 @@ header {
 }
 
 /* Display box outline for tracked functions section */
-.function-container {
+.tracked-function-container {
     border: 2px solid var(--color-black);
     background-color: var(--color-white);
     border-radius: 5px;
     padding: 20px;
     box-sizing: border-box;
+    margin: 30px 0;
 }
 
 /* Style the input boxes */
@@ -90,20 +107,25 @@ input[type="text"], select {
 
 
 /* Total Tracker Section */
+
+/* Affects everything in  <section id="total-tracker"> */
 #total-tracker {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 0;
 }
 
-#total-tracker h2 {
-    flex: 0 1 auto;
-}
-
+/* Affects total number provided by JS */
 #total {
     margin-left: auto;
-    color: red;
+}
+
+/* Affects the total number displayed by JavaScript */
+.total-number {
+    margin: 10px 0;
+    text-align: right;
 }
 
 /* Function Name label and box */
@@ -149,6 +171,10 @@ input[type="text"], select {
     /* Ensure it takes full width */
 }
 
+#modal {
+    display: block;
+}
+
 
 
 /* Checkboxes in attributes */
@@ -182,16 +208,7 @@ label[for="my-scope"] {
 
     h1 {
         font-size: 1.5rem;
-        /* Adjust the font size for mobile */
         margin: 0;
-        /* Remove margin */
-    }
-
-    h2 {
-        margin: 25px 0;
-        /* Add margin only above and below */
-        padding-bottom: 0px;
-        padding-top: 20px;
     }
 
     .add-new-container {
