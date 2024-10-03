@@ -11,18 +11,23 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0 100px;
+    margin: 50px 100px;
 }
 
 .main-container {
-    display: flex; /* Use flexbox to align children side by side */
-    justify-content: space-between; /* Space between columns */
+    display: flex;
+    /* Use flexbox to align children side by side */
+    justify-content: space-between;
+    /* Space between columns */
     align-items: flex-start;
 }
 
-.container, /* for the header section */
-main { /* for the main section */
-    flex: 0 0 calc(50% - 20px); /* Take up half the width minus the space for margins */
+.container,
+/* for the header section */
+main {
+    /* for the main section */
+    flex: 0 0 calc(50% - 20px);
+    /* Take up half the width minus the space for margins */
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -40,8 +45,25 @@ h2 {
     font-size: 26px;
     color: var(--color-black);
     font-weight: 500;
+}
+
+h3,
+h4 {
+    font-size: 22px;
+    color: var(--color-black);
+    font-weight: 500;
+    padding-bottom: 15px;
+    list-style-type: none;
+
+}
+
+p {
+    font-size: 18px;
+    color: var(--color-black);
+    font-weight: 500;
     padding-bottom: 15px;
 }
+
 
 header {
     flex: 1;
@@ -63,16 +85,18 @@ header {
 }
 
 /* Display box outline for tracked functions section */
-.function-container {
+.tracked-function-container {
     border: 2px solid var(--color-black);
     background-color: var(--color-white);
     border-radius: 5px;
     padding: 20px;
     box-sizing: border-box;
+    margin: 30px 0;
 }
 
 /* Style the input boxes */
-input[type="text"], select {
+input[type="text"],
+select {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -90,31 +114,34 @@ input[type="text"], select {
 
 
 /* Total Tracker Section */
+
+/* Affects everything in  <section id="total-tracker"> */
 #total-tracker {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 0;
 }
 
-#total-tracker h2 {
-    flex: 0 1 auto;
-}
-
+/* Affects total number provided by JS */
 #total {
     margin-left: auto;
-    color: red;
+}
+
+/* Affects the total number displayed by JavaScript */
+.total-number {
+    margin: 10px 0;
+    text-align: right;
 }
 
 /* Function Name label and box */
 #modal-name {
-    align-items: center; /* Vertically centers the label and input */
-    gap: 10px; /* Adds space between the label and input */
+    align-items: center;
+    /* Vertically centers the label and input */
+    gap: 10px;
+    /* Adds space between the label and input */
     max-width: 100%;
-}
-
-#modal-name label {
-    flex-shrink: 0; /* Prevents the label from shrinking */
 }
 
 /* Tracked Functions section */
@@ -149,7 +176,29 @@ input[type="text"], select {
     /* Ensure it takes full width */
 }
 
+#modal {
+    display: block;
+}
 
+#the-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    border-radius: 5px; /* Rounded corners */
+    max-width: 100%;
+}
+
+#the-list li {
+    border-bottom: 1px solid #ddd; /* Add a border between items */
+}
+
+#the-list li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+#the-list li.button {
+    padding: 100px;
+}
 
 /* Checkboxes in attributes */
 .checkbox-container label {
@@ -172,9 +221,12 @@ label[for="my-name"],
 label[for="my-desc"],
 label[for="my-type"],
 label[for="my-scope"] {
-    font-size: 20px; /* Example styling */
-    margin-bottom: 6px; /* Space between labels */
-    display: block; /* Makes labels stack vertically */
+    font-size: 20px;
+    /* Example styling */
+    margin-bottom: 6px;
+    /* Space between labels */
+    display: block;
+    /* Makes labels stack vertically */
 }
 
 /* Styles for mobile view */
@@ -182,16 +234,7 @@ label[for="my-scope"] {
 
     h1 {
         font-size: 1.5rem;
-        /* Adjust the font size for mobile */
         margin: 0;
-        /* Remove margin */
-    }
-
-    h2 {
-        margin: 25px 0;
-        /* Add margin only above and below */
-        padding-bottom: 0px;
-        padding-top: 20px;
     }
 
     .add-new-container {

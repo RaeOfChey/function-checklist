@@ -4,14 +4,6 @@ button {
     font-weight: 700;
 }
 
-/* MAkes edit and remove buttons to be on the same row */
-#button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-
 /* Add button styles */
 #add {
     background-color: var(--color-primary);
@@ -38,8 +30,29 @@ button {
 }
 
 
+/* See More button styles' */
+#moreButton {
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    padding: 20px 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+/* Edit and erase button on the same line */
+.edit-erase-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
 /* Edit button styles */
-#button-edit {
+#editButton {
     background-color: var(--color-primary);
     color: var(--color-black);
     border: none;
@@ -47,16 +60,16 @@ button {
     border-radius: 4px;
 }
 
-#button-edit:hover {
+#editButton:hover {
     background-color: var(--color-secondary);
 }
 
-#button-edit:active {
+#editButton:active {
     border: 2px solid var(--color-black);
     transform: scale(0.95);
 }
 
-#button-edit:disabled {
+#editButton:disabled {
     background-color: var(--color-gray);
     color: var(--color-light-gray);
     cursor: not-allowed;
@@ -91,8 +104,8 @@ button {
 }
 
 
-/* Remove button styles */
-#button-remove {
+/* Erase button styles */
+#eraseButton {
     background-color: var(--color-white);
     color: var(--color-black);
     border: 2px solid var(--color-primary);
@@ -100,15 +113,15 @@ button {
     border-radius: 4px;
 }
 
-#button-remove:hover {
+#eraseButton:hover {
     background-color: var(--color-primary);
 }
 
-#button-remove:active {
+#eraseButton:active {
     transform: scale(0.95);
 }
 
-#button-remove:disabled {
+#eraseButton:disabled {
     background-color: var(--color-light-gray);
     color: var(--color-gray);
     cursor: not-allowed;
@@ -137,4 +150,10 @@ button {
     background-color: var(--color-light-gray);
     color: var(--color-gray);
     cursor: not-allowed;
+}
+
+section#buttons {
+    display: flex; /* Make sure buttons are side by side */
+    justify-content: space-between; /* Align buttons to the left */
+    margin-top: 10px; /* Add space between this container and the See More button */
 }
