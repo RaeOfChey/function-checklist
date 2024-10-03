@@ -44,12 +44,9 @@
 
         <section id="modal">
             <div id="modal-content">
+                <h2 id="modal-header">Add a New Function</h2> <!-- New header element -->
                 <form>
-
                     <section id="Input">
-
-                        <h2>Add a new function</h2>
-
                         <div id="modal-name">
                             <label for="my-name">Function Name</label>
                             <input type="text" id="my-name" name="modal-name" placeholder="Name your function" required>
@@ -65,15 +62,9 @@
 
                         <br>
 
-                        <button class="accordion">
-                            <span class="arrow">▼</span>
-                            <span class="text">See all attributes</span>
-                        </button>
-
                         <div class="panel">
                             <p>Here are the hidden attributes that will now be visible.</p>
                         </div>
-
                     </section>
 
                     <h2>Attributes</h2>
@@ -81,7 +72,7 @@
                     <section id="modal-type">
                         <label for="my-type">Function Type</label>
                         <select id="my-type" name="modal-type">
-                            <option value="" disabled selected>Choose an option</option> <!-- Placeholder option -->
+                            <option value="" disabled selected>Choose an option</option>
                             <option value="named">Named</option>
                             <option value="anonymous">Anonymous</option>
                             <option value="callback">Callback</option>
@@ -89,7 +80,7 @@
                     </section>
 
                     <div class="checkbox-container">
-                        <label><input type="checkbox"> Is the function being called?</label>
+                        <label><input type="checkbox" id="beingcalled"> Is the function being called?</label>
                         <label><input type="checkbox"> Does the function redirect a page?</label>
                         <label><input type="checkbox"> Does the function have any dependencies?</label>
                         <label><input type="checkbox"> Is the function executed successfully?</label>
@@ -98,27 +89,18 @@
                         <label><input type="checkbox"> Does the function pass along arguments to others?</label>
                     </div>
 
-                    <section id="modal-checkboxes">
-                        <label>
-                            <input type="checkbox" id="beingcalled" name="beingcalled" value="iscalled">
-                        </label>
-                    </section>
-
                     <section id="modal-scope">
                         <label for="my-scope">Function Scope</label>
                         <select id="my-scope" name="modal-scope">
-                            <option value="" disabled selected>Choose an option</option> <!-- Placeholder option -->
+                            <option value="" disabled selected>Choose an option</option>
                             <option value="global">Global</option>
                             <option value="local">Local</option>
                             <option value="block">Block</option>
                         </select>
                     </section>
 
-                    <section id="save">
-                        <button id="button-save">Save</button>
-                    </section>
-
-                    <section id="cancel">
+                    <section id="buttons">
+                        <button id="button-save" type="submit">Save</button>
                         <button id="button-cancel" type="button">Cancel</button>
                     </section>
 

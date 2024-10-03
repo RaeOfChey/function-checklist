@@ -144,11 +144,6 @@ select {
     max-width: 100%;
 }
 
-#modal-name label {
-    flex-shrink: 0;
-    /* Prevents the label from shrinking */
-}
-
 /* Tracked Functions section */
 #modal-content {
     display: flex;
@@ -183,6 +178,26 @@ select {
 
 #modal {
     display: block;
+}
+
+#the-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    border-radius: 5px; /* Rounded corners */
+    max-width: 100%;
+}
+
+#the-list li {
+    border-bottom: 1px solid #ddd; /* Add a border between items */
+}
+
+#the-list li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+#the-list li.button {
+    padding: 100px;
 }
 
 /* Checkboxes in attributes */

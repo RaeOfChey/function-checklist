@@ -8,45 +8,40 @@ const save = document.getElementById(`button-save`);
 const cancel = document.getElementById(`button-cancel`);
 const addButton = document.getElementById(`add`);
 const modal = document.getElementById(`modal`);
+const modalHeader = document.getElementById(`modal-header`);
 const mainList = document.querySelector(`#the-list`);
+const redirectInput = document.getElementById('redirect');
+const dependenciesInput = document.getElementById('dependencies');
 
 const totalNumber = document.createElement(`h2`);
 totalNumber.className = 'total-number';
 total.appendChild(totalNumber);
 
-let currentEditIndex = -1
+let currentEditIndex = -1;
 
 function updateTracker() {
-
-    let funcList = localStorage.getItem(`funcList`)
+    let funcList = localStorage.getItem(`funcList`);
 
     if (funcList === null) {
-
         funcList = [];
     } else {
-
         funcList = JSON.parse(funcList);
-
     }
 
     totalNumber.innerText = funcList.length === 0 ? `0` : funcList.length;
 }
 
 function renderList() {
-
-    stored = localStorage.getItem(`funcList`);
+    const stored = localStorage.getItem(`funcList`);
 
     if (stored === null) {
         mainList.innerHTML = `Press "Add" to add your first function!`;
     } else {
-
         mainList.innerHTML = ``;
-
-        funcList = JSON.parse(stored);
+        const funcList = JSON.parse(stored);
 
         for (let i = 0; i < funcList.length; i++) {
             const info = funcList[i];
-
             const card = document.createElement(`li`);
             const funcItem = document.createElement(`article`);
             const funcName = document.createElement(`h3`);
@@ -56,13 +51,6 @@ function renderList() {
             const attList = document.createElement(`ul`);
             const funcType = document.createElement(`p`);
             const funcScope = document.createElement(`p`);
-            const attItem = document.createElement(`li`);
-            const tips = document.createElement(`p`);
-            const allTips = document.createElement(`ul`);
-            const tipItem = document.createElement(`li`);
-            const edit = document.createElement(`button`);
-            const erase = document.createElement(`button`);
-            const seeMore = document.createElement(`button`);
 
             funcName.textContent = info.title;
             description.textContent = `Description`;
@@ -70,6 +58,12 @@ function renderList() {
             attributes.textContent = `Attributes`;
             funcType.textContent = `Function type: ` + info.type;
             funcScope.textContent = `Function scope: ` + info.scope;
+
+            // Create buttons
+            const edit = document.createElement(`button`);
+            const erase = document.createElement(`button`);
+            const seeMore = document.createElement(`button`);
+
             edit.textContent = `Edit`;
             edit.id = `editButton`;
             erase.textContent = `Erase`;
@@ -77,13 +71,26 @@ function renderList() {
             seeMore.textContent = `See More`;
             seeMore.id = `moreButton`;
 
+            // Create a container ONLY for the Edit and Erase buttons
+            const editEraseContainer = document.createElement('div');
+            editEraseContainer.className = 'edit-erase-container'; // Optional: add a class for styling
+
+            // Style this container to show edit/erase side by side
+            editEraseContainer.style.display = 'flex'; // Makes the buttons side by side
+            editEraseContainer.style.marginTop = '10px'; // Adds some space from the See More button
+
+            // Append Edit and Erase buttons to the container
+            editEraseContainer.append(edit, erase);
+
+            // Append the See More button and the editEraseContainer separately to the list
             mainList.appendChild(card);
-            card.append(funcItem, seeMore, edit, erase);
-            funcItem.append(funcName, description, attributes,);
+            card.append(funcItem, seeMore, editEraseContainer); // Append See More separately from the edit/erase buttons
+            funcItem.append(funcName, description, attributes);
             description.appendChild(funcDescription);
             attributes.appendChild(attList);
             attList.append(funcType, funcScope);
 
+            // Add event listeners for buttons
             edit.addEventListener('click', () => editFunction(i));
             erase.addEventListener('click', () => removeFunction(i));
         }
@@ -91,7 +98,6 @@ function renderList() {
 }
 
 function addFunction(event) {
-
     if (modal.style.display === `none`) {
         showModal();
         return;
@@ -111,15 +117,13 @@ function addFunction(event) {
         type: type,
         scope: scope,
         called: called,
-    }
+    };
 
-    let funcList = localStorage.getItem(`funcList`)
+    let funcList = localStorage.getItem(`funcList`);
 
     if (funcList === null) {
-
         funcList = [];
     } else {
-
         funcList = JSON.parse(funcList);
     }
 
@@ -131,7 +135,7 @@ function addFunction(event) {
         funcList.push(newFunction);
     }
 
-    // Ensure to save the updated list to local storage
+    // Save the updated list to local storage
     localStorage.setItem(`funcList`, JSON.stringify(funcList));
     renderList();
     updateTracker();
@@ -149,6 +153,7 @@ function editFunction(index) {
     scopeInput.value = functionToEdit.scope;
     calledInput.checked = functionToEdit.called;
 
+    modalHeader.textContent = 'Edit Function'; // Set modal header for editing
     showModal();
 }
 
@@ -174,6 +179,17 @@ document.addEventListener(`DOMContentLoaded`, function () {
     renderList();
 });
 
-addButton.addEventListener(`click`, showModal);
+addButton.addEventListener(`click`, () => {
+    currentEditIndex = -1; // Reset edit index for adding new function
+    titleInput.value = '';
+    descriptionInput.value = '';
+    typeInput.value = '';
+    scopeInput.value = '';
+    calledInput.checked = false;
+
+    modalHeader.textContent = 'Add a New Function'; // Set modal header for adding new function
+    showModal();
+});
+
 cancel.addEventListener(`click`, hideModal);
 save.addEventListener(`click`, addFunction);

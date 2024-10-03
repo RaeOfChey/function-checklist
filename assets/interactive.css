@@ -1,16 +1,4 @@
-/* Accordion for 'See all attributes' */
-#moreButton {
-    background-color: transparent;
-    color: black;
-    cursor: pointer;
-    padding: 20px 0;
-    width: 100%;
-    text-align: left;
-    border: none;
-    font-weight: 500;
-    text-decoration: underline;
-    font-size: 16px;
-}
+
 
 /* ----- Dropdown boxes Styling ----- */
 
@@ -44,18 +32,11 @@ select#my-scope.selected {
 }
 
 .checkbox-container label {
-    display: flex;
-    /* Make the label a flex container */
-    align-items: center;
-    /* Center the items vertically */
-    cursor: pointer;
-    /* Change cursor to pointer */
-    margin-bottom: 10px;
-    /* Space between checkboxes */
-    position: relative;
-    /* Positioning context for pseudo-elements */
-    padding-left: 30px;
-    /* Space for the custom checkbox */
+    display: flex; /* Make the label a flex container */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-bottom: 10px; /* Space between checkboxes */
+    position: relative; /* Positioning context for pseudo-elements */
+    padding-left: 30px; /* Space for the custom checkbox */
 }
 
 /* Hide the default checkbox that is made by using the label checkboxes */
