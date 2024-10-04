@@ -77,17 +77,7 @@
                                     <option value="callback">Callback</option>
                                 </select>
                             </div>
-
-                            <div class="checkbox-container">
-                                <label><input type="checkbox" id="beingcalled" name = "called" value = "Make sure to call your function!"> Is the function being called?</label><br>
-                                <label><input type="checkbox" id="redirect" name = "redirect" value = "Make sure to redirect to the proper URL"> Does the function redirect a page?</label><br>
-                                <label><input type="checkbox" id = "dependent" name = "dependent" value = "Define any variables, functions, or other information outside the function scope"> Does the function have any dependencies?</label><br>
-                                <label><input type="checkbox" id = "success" name = "success" value = "If the function is executing but issues are still coming up, make sure any information is being returned or passed from the function"> Is the function executed successfully?</label><br>
-                                <label><input type="checkbox" id = "return" name = "return" value = "Make sure values are returned globally using the: return; method"> Does the function return any values?</label><br>
-                                <label><input type="checkbox" id = "parameters" name="parameters" value = "Ensure the function is recieving the necessary pass along information for its parameter"> Does the function have any parameters?</label><br>
-                                <label><input type="checkbox" id = "arguments" name = "arguments" value = "Check that necessary information from this function is being passed to other functions"> Does the function pass along arguments to others?</label><br>
-                            </div>
-
+                            
                             <div class="form-group">
                                 <label for="my-scope">Function Scope</label>
                                 <select class="form-control" id="my-scope" name="modal-scope" required>
@@ -96,6 +86,16 @@
                                     <option value="local">Local</option>
                                     <option value="block">Block</option>
                                 </select>
+                            </div>
+
+                            <div class="checkbox-container">
+                                <label><input type="checkbox" id="beingcalled" name = "called" value = "Double check this function is being called in the correct place!"> Is the function being called?</label><br>
+                                <label><input type="checkbox" id="redirect" name = "redirect" value = "Ensure the redirect URL is correct and valid before calling the redirect function"> Does the function redirect a page?</label><br>
+                                <label><input type="checkbox" id = "dependent" name = "dependent" value = "Define any required variables or functions outside your function to avoid 'undefined' errors"> Does the function have any dependencies?</label><br>
+                                <label><input type="checkbox" id = "success" name = "success" value = "If any functions require information from another, ensure that function waits for the first to pass along the necessary information">Are you calling multiple functions in a row?</label><br>
+                                <label><input type="checkbox" id = "return" name = "return" value = "Don't forget to use the 'return' statement if you want to output a value from your function"> Does the function return any values?</label><br>
+                                <label><input type="checkbox" id = "parameters" name="parameters" value = "Ensure the function is recieving the necessary pass along information for its parameter(s) when it is called"> Does the function have any parameters?</label><br>
+                                <label><input type="checkbox" id = "arguments" name = "arguments" value = "Check that necessary information from this function is being passed to other functions"> Does the function pass along arguments to others?</label><br>
                             </div>
 
                             <div class="modal-footer">
