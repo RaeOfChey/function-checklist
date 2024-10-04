@@ -239,6 +239,7 @@ function hideModal() {
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
     });
+    currentEditIndex = -1;
 }
 
 document.addEventListener(`DOMContentLoaded`, function () {
