@@ -51,8 +51,14 @@ function renderList() {
             const funcDescription = document.createElement(`blockquote`);
             const attributes = document.createElement(`h3`);
             const attList = document.createElement(`ul`);
-            const funcType = document.createElement(`p`);
-            const funcScope = document.createElement(`p`);
+            const funcType = document.createElement(`h4`);
+            const funcScope = document.createElement(`h4`);
+
+            for (let index = 0; index < checkboxes.length; index++) {
+                const checkbox = checkboxes[index];
+                checkbox.checked = info.checkboxValues && info.checkboxValues[index];
+            }
+            
 
             funcName.textContent = info.title;
             description.textContent = `Description`;
@@ -61,20 +67,12 @@ function renderList() {
             funcType.textContent = `Function type: ` + info.type;
             funcScope.textContent = `Function scope: ` + info.scope;
 
-            checkboxes.forEach(checkbox => {
-                if(checkbox.checked) {
-
-                const listItem = document.createElement(`li`);
-                listItem.textContent = checkbox.value;
-                attList.appendChild(listItem);
-                }
-            });
-
+            
             // Create buttons
             const edit = document.createElement(`button`);
             const erase = document.createElement(`button`);
             const seeMore = document.createElement(`button`);
-
+            
             edit.textContent = `Edit`;
             edit.id = `editButton`;
             edit.className = `btn btn-primary`;
@@ -84,18 +82,18 @@ function renderList() {
             erase.id = `eraseButton`;
             seeMore.textContent = `See More`;
             seeMore.id = `moreButton`;
-
+            
             // Create a container ONLY for the Edit and Erase buttons
             const editEraseContainer = document.createElement('div');
             editEraseContainer.className = 'edit-erase-container'; // Optional: add a class for styling
-
+            
             // Style this container to show edit/erase side by side
             editEraseContainer.style.display = 'flex'; // Makes the buttons side by side
             editEraseContainer.style.marginTop = '10px'; // Adds some space from the See More button
-
+            
             // Append Edit and Erase buttons to the container
             editEraseContainer.append(edit, erase);
-
+            
             // Append the See More button and the editEraseContainer separately to the list
             mainList.appendChild(card);
             card.append(funcItem, seeMore, editEraseContainer); // Append See More separately from the edit/erase buttons
@@ -103,6 +101,15 @@ function renderList() {
             description.appendChild(funcDescription);
             attributes.appendChild(attList);
             attList.append(funcType, funcScope);
+            
+            checkboxes.forEach(checkbox => {
+                if(checkbox.checked) {
+
+                const listItem = document.createElement(`li`);
+                listItem.textContent = checkbox.value;
+                attList.appendChild(listItem);
+                }
+            });
 
             attributes.style.display = `none`;
 
@@ -130,6 +137,12 @@ function addFunction(event) {
     const type = typeInput.value.trim();
     const scope = scopeInput.value.trim();
     const called = calledInput.checked;
+
+    let checkboxValues = [];
+        for (let checkbox of checkboxes) {
+        checkboxValues.push(checkbox.checked);
+    }
+
     
     if (!title || !description || !type || !scope) {
         error.style.display = `block`;
@@ -151,6 +164,7 @@ function addFunction(event) {
             type,
             scope,
             called,
+            checkboxValues
         };
         editIndex = null;
         currentEditIndex = -1; // Reset edit index
@@ -162,6 +176,7 @@ function addFunction(event) {
             type: type,
             scope: scope,
             called: called,
+            checkboxValues
         }
         
         funcList.push(newFunction);
@@ -224,6 +239,7 @@ function hideModal() {
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
     });
+    currentEditIndex = -1;
 }
 
 document.addEventListener(`DOMContentLoaded`, function () {
@@ -240,7 +256,7 @@ addButton.addEventListener(`click`, () => {
         scopeInput.value = '';
         calledInput.checked = false;
 
-        modalHeader.textContent = 'Add a New Function'; // Set modal header for adding a new function
+        modalHeader.textContent = 'Add a new function'; // Set modal header for adding a new function
     } else {
         // If editing, populate the fields with the selected function's details
         let funcList = JSON.parse(localStorage.getItem(`funcList`));
