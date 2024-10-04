@@ -35,7 +35,7 @@ button {
     background-color: transparent;
     color: black;
     cursor: pointer;
-    padding: 20px 0;
+    padding-bottom: 20px;
     width: 100%;
     text-align: left;
     border: none;
@@ -58,6 +58,7 @@ button {
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
+    font-weight: 700;
 }
 
 #editButton:hover {
@@ -78,17 +79,17 @@ button {
 
 /* Save button styles */
 #button-save {
-    background-color: var(--color-black);
-    color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-black);
     border: none;
     padding: 12px 40px;
     border-radius: 4px;
     margin-right: 10px;
+    font-weight: 600;
 }
 
 #button-save:hover {
-    background-color: var(--color-dark-gray);
-    color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
 
 #button-save:active {
@@ -136,6 +137,7 @@ button {
     padding: 10px 20px;
     border-radius: 4px;
     margin-right: 10px;
+    font-weight: 700;
 }
 
 #button-cancel:hover {
@@ -161,23 +163,18 @@ section#buttons {
 /* ----- Dropdown boxes Styling ----- */
 
 /* Shared styles for both dropdowns before selection */
-select#my-type,
-select#my-scope {
-    font-size: 16px;
-    color: var(--color-gray);
-    background-color: white;
-}
 
 /* Shared styles during choosing selection */
 select#my-type.active,
 select#my-scope.active {
     background-color: var(--color-primary);
-    color: black;
+    color: var(--color-black);
+    color: var(--color-back);
 }
 
 /* Shared styles after choosing selection */
 select#my-type.selected,
 select#my-scope.selected {
-    background-color: white;
-    color: black;
+    background-color: var(--color-white);
+    color: var(--color-black);
 }

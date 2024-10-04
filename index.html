@@ -18,10 +18,7 @@
         <h1>✅ FuncTastic</h1>
         <section id="add-new">
             <button id="add" data-bs-toggle="modal" data-bs-target="#myModal">Add</button>
-            <div class="main-container">
-                <div class="container">
-                    <h2>Add a new function</h2>
-                </div>
+            <h2 id="add-function-header">Add a new function</h2>
         </section>
     </header>
 
@@ -31,7 +28,9 @@
 
             <section id="total-tracker">
                 <h2>Tracked Functions</h2>
-                <h2 id="total">total:<!--total var here --></h2>
+                <div>
+                    <h2 id="total">total:<!--total var here --></h2>
+                </div>
             </section>
 
             <section id="main-list">
@@ -47,13 +46,11 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modal-header">Add a New Function</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h2 class="modal-title" id="modal-header">Edit function</h2>
                     </div>
                     <div class="modal-body">
                         <form> <!-- Single form structure -->
+                            <h3>Function information</h3>
                             <div class="form-group">
                                 <label for="my-name">Function Name</label>
                                 <input type="text" class="form-control" id="my-name" name="modal-name"
@@ -66,7 +63,6 @@
                                     placeholder="Describe your function" required>
                             </div>
 
-                            <h5>Function information</h5>
                             <div class="panel">
                                 <p>Here are the hidden attributes that will now be visible.</p>
                             </div>

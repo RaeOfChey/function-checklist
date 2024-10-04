@@ -240,7 +240,7 @@ addButton.addEventListener(`click`, () => {
         scopeInput.value = '';
         calledInput.checked = false;
 
-        modalHeader.textContent = 'Add a New Function'; // Set modal header for adding a new function
+        modalHeader.textContent = 'Add a new function'; // Set modal header for adding a new function
     } else {
         // If editing, populate the fields with the selected function's details
         let funcList = JSON.parse(localStorage.getItem(`funcList`));
