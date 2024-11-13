@@ -1,48 +1,73 @@
-# function-checklist
+## FuncTastic
 
-FuncTastic
-A checklist and tracker for JavaScript functions, that helps users track which functions they currently have, if they have been called, and create a short description about what the function does and calls, based on user input and selected elements.
-This porject was made in the hope to help new developers be able to track and troublshoot their functions with ease. This project was wireframed in FIGMA, with our main code being written in Visual Studio Code, and bootstrap being utilized for certain CSS and functionality elements.
+### Status: In Progress
 
+![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
-Functastic is currently a web-based project, requiring users to access the FuncTastic website to use. We hope to impliment it as an extension to code editor applications such as VS Code in the future.
-Currently you can access the project at this website : https://raeofchey.github.io/function-checklist/
+## Table of Contents
+1. [Description](#description)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Tools and Technologies](#tools-and-technologies)
+6. [License](#license)
+7. [Contributing](#contributing)
+8. [Tests](#tests)
+9. [Questions](#questions)
 
-Users are prompted to give their function a name, and a brief description about what it does.
+## Description
+FuncTastic is a JavaScript function checklist and tracker that helps developers efficiently manage and monitor their JavaScript functions. It allows users to input, track, and update function details like scope, dependencies, and execution status, providing a clear and organized view of each function's role and state within the project. With an intuitive interface, developers can expand on function details, edit them, and track their usage, making FuncTastic an essential tool for managing function behavior in growing codebases.
 
-![Screenshot 2024-10-04 023026](https://github.com/user-attachments/assets/2dc04d60-5662-47b1-9382-3ca1d0dbe863)            ![Screenshot 2024-10-04 022957](https://github.com/user-attachments/assets/a2b65cc5-d2aa-4bea-a276-7d3ce1ca03fa)
+<img width="640" alt="FuncTastic Thumbnail Image" src="https://github.com/user-attachments/assets/a2f8e294-0b75-445d-ab08-53d8cc93ee21">
 
+Example of form about function details
 
-From there they may select the type of function it is, the scope of the function, and additional attributes the function may have.
-Afterwards users may save the function, at which point it will become available to them as an item in their tracker list, which can be viewed more thoroughly, edited, and/or deleted.
+## Features
+- Add, view, and edit function details, including name, scope, parameters, dependencies, and execution status.
+- Save function details to LocalStorage, allowing for consistent data access across sessions.
+- Built with Bootstrap, the app adapts seamlessly across devices, making it easy to use on any screen.
+- Monitor function execution status, keeping track of whether each function has been successfully called or executed.
 
-![Screenshot 2024-10-04 022917](https://github.com/user-attachments/assets/975bb8f2-c9f7-4f8f-803e-710b90c3ca9f)     
+## Installation
+To use the application, follow these steps:
 
+- Step 1. Clone the repository
+- Step 2. Navigate to the project directory: cd FuncTastic
+- Step 3. Open the index.html file in your browser to start using FuncTastic
 
-![Screenshot 2024-10-04 022936](https://github.com/user-attachments/assets/b4fe1ad6-c74d-4f97-a5b7-8354b69a4430)
+## Usage
+View the live application here: Link coming soon!
 
+Add function details via the form, expand entries to view full information, and edit details as needed. All added functions are stored in LocalStorage, ensuring your data persists across sessions.
 
-This project was made in collaboration by Cheyenna Raelynn and Christopher Persaud-Cox
+## Tools and Technologies
+**Frontend Framework**:
+- HTML/CSS
+- JavaScript
 
-LICENSE
-MIT License
+**Styling**:
+  - Bootstrap
+  - Custom CSS
+  - fIGMA
 
-Copyright (c) 2024 RaeofChey
+**Hosting**:
+- Render
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## License
+This project is licensed under the MIT License, which allows you to freely use, modify, and distribute this software, provided proper attribution is given.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Contributing
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This project was made in collaborative effort by Cheyenna Raelynn and Christopher Persaud-Cox, with each team member contributing to multiple aspects:
+- Cheyenna: Led wireframing and prototyping in Figma, styled the app using CSS, added HTML structure, and integrated Bootstrap for modal functionality.
+- Chris: Focused on implementing JavaScript logic, LocalStorage functionality, and integrating modals with the JavaScript functions.
+  
+Both team members collaborated on UI/UX design and code adjustments to ensure a smooth, user-friendly experience.
+
+This project is part of a coding bootcamp assignment and is not open for contributions. To comply with the course requirements, I must complete this project individually without outside assistance. Therefore, pull requests, issues, or other contributions will not be accepted. Thank you for understanding!
+
+## Tests
+Currently, this project does not have any automated tests.
+
+## Questions
+If you have any questions about the repository, feel free to reach out by opening an issue or contacting me directly at cheyennaraelynn@gmail.com You can also find more of my work on GitHub at https://github.com/RaeOfChey.
