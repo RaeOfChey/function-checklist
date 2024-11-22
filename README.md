@@ -48,7 +48,7 @@ Add function details via the form, expand entries to view full information, and 
 **Styling**:
   - Bootstrap
   - Custom CSS
-  - fIGMA
+  - Figma
 
 **Hosting**:
 - Render
